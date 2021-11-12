@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8aeca753eb.js" crossorigin="anonymous"></script>
+    <title>Hello, world!</title>
+</head>
+<style>
+    /** {
+        box-sizing: border-box;
+    }*/
+
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Open Sans", sans-serif
+    }
+
+    .card-deck {
+        margin: 50px 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: #fff;
+
+
+    }
+
+    .card {
+
+        border: #fff;
+
+
+    }
+
+
+
+    .navbar li i {
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    .navbar li a {
+
+        color: #fff;
+    }
+
+    .navbar li a {
+
+        color: #fff;
+    }
+
+    .navbar li a i:hover {
+        color: #000;
+
+        background-color: #fff;
+    }
+    .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  #section1,#section2,#section3{
+      padding-top:50px;
+      }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#section1"><i class="fa fa-home active"></i>Logo</a>
+        <button class="navbar-toggler logo" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="#section2">
+                        <i class="fa fa-globe"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#section3"><i class="fa fa-user"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa fa-envelope"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-bell"></i><span
+                            class="badge badge-success rounded-circle">3</span></a>
+
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                        <a class="dropdown-item" href="#">Action 3</a>
+
+                    </div>
+
+                </li>
+            </ul>
+
+
+            <button type="button" class="btn btn-primary col-1 mx-auto" data-toggle="modal" data-target="#myModal3"
+                data-backdrop="static" id="logbtn">Login</button>
+
+
+
+            <a href="#" class="navbar-inline" title="My Account" >
+                <img src="avatar2.png" class="rounded-circle" style="height:23px;width:23px" alt="Avatar">
+            </a>
+            <a class="navbar-brand nav-item" id="welcommsg">
+                </a>
+        </div>
+    </nav>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal3" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login required</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="get">
+                        <p>Please enter your user name</p>
+                        <label for="username">username</label>
+                        <input type="text" name="username" id="username" placeholder="here">
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal" onclick="login()">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var uname = document.getElementById("username").value;
+
+            var filter = /^([a-zA-Z0-9_\.\-])/;
+            if (uname == '') {
+                alert("please enter user name.");
+            }
+            else if (!filter.test(uname)) {
+                alert("Enter valid username.");
+            }
+
+            else {
+
+                document.getElementById("logbtn").style.display = "none";
+                document.getElementById("welcommsg").innerHTML = "  welcome " + uname;
+            }
+        }
+
+
+    </script>
+
+
+
+<!-- carousel-->
+<div class="container mt-3">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="forest.jpg" alt="Los Angeles" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="nature.jpg" alt="Chicago" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="forest.jpg" alt="New York" width="1100" height="500">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    
+</div>
+
+    <!--start of the page-->
+   
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 col-xs-12">
+
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">My Profile</h5>
+                            <img src="avatar3.png" class="card-img-top rounded-circle" alt="...">
+                        </div>
+                        <div class="card-footer">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item"><i class="fa fa-pen mr-2"></i>Designer, UI</li>
+                                <li class="nav-item"><i class="fa fa-home mr-2"></i>London, UK</li>
+                                <li class="nav-item"><i class="fas fa-birthday-cake mr-2"></i>April 1, 1988</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card-deck bg-dark">
+
+
+                    <ul class="navbar navbar-dark bg-dark mx-auto">
+                        <li class="nav-item col-12" type="button" data-toggle="collapse" data-target="#group"
+                            aria-controls="group" aria-expanded="false" aria-label="Toggle navigation">
+                            <a class="nav-link" href="#">
+                                <h4 class="text-white"> </h4><i class="fa fa-object-group" aria-hidden="true"></i>
+                                My
+                                groups</h4>
+                            </a>
+                        </li>
+                        <div class="collapse" id="group">
+                            <div class="bg-dark p-4">
+                                <h5 class="text-white h4">some text</h5>
+                            </div>
+                        </div>
+                        <li class="nav-item col-12" type="button" data-toggle="collapse" data-target="#event"
+                            aria-controls="event" aria-expanded="false" aria-label="Toggle navigation">
+                            <a class="nav-link" href="#">
+                                <h4 class="text-white"></h4><i class="fa fa-calendar group" aria-hidden="true"></i>
+                                My
+                                Events</h4>
+                            </a>
+                        </li>
+                        <div class="collapse" id="event">
+                            <div class="bg-dark p-4">
+                                <h5 class="text-white h4">some other text..</h5>
+                            </div>
+                        </div>
+                        <li class="nav-item col-12" type="button" data-toggle="collapse" data-target="#photo"
+                            aria-controls="photo" aria-expanded="false" aria-label="Toggle navigation">
+                            <a class="nav-link" href="#">
+                                <h4 class="text-white"></h4><i class="fa fa-calendar group" aria-hidden="true"></i>My
+                                images</h4>
+                            </a>
+                        </li>
+                        <div class="collapse" id="photo">
+                            <div class="bg-dark p-4">
+                                <div class="input-group mb-3">
+                                    <div class="col-6"><img class="img-thumbnail" src="forest.jpg" alt=""></div>
+                                    <div class="col-6"><img class="img-thumbnail" src="nature.jpg" alt=""></div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-6"><img class="img-thumbnail" src="forest.jpg" alt=""></div>
+                                    <div class="col-6"><img class="img-thumbnail" src="nature.jpg" alt=""></div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-6"><img class="img-thumbnail" src="forest.jpg" alt=""></div>
+                                    <div class="col-6"><img class="img-thumbnail" src="nature.jpg" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+
+
+                </div>
+
+
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Interrests</p>
+                        </div>
+                        <div><span class="p-100 mb-5 bg-primary text-white">News</span>
+                            <span class="p-100 mb-5 bg-secondary text-white">W100Schools</span>
+                            <span class="p-100 mb-5 bg-success text-white">Labels</span>
+                            <span class="p-100 mb-5 bg-danger text-white">Games</span>
+                            <span class="p-100 mb-5 bg-warning text-dark">Friends</span>
+                            <span class="p-100 mb-5 bg-info text-white">Food</span>
+                            <span class="p-100 mb-5 bg-light text-dark">Design</span>
+                            <span class="p-100 mb-5 bg-dark text-white">Art</span>
+                            <span class="p-100 mb-5 bg-white text-dark">Photos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck alert alert-dark alert-dismissible fade show" role="alert">
+
+                    <strong>Hey!</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <br><br>
+                    <p>People are looking at your profile. Find out who.</p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-5 col-xs-12" >
+                <div class="card-deck" id="section1">
+                    <div class="card">
+                        <div class="card-body">
+                            <small>Social Media template by w3.css</small>
+                            <div class="input-group mb-3">
+
+                                <input type="text" class="form-control" placeholder="" aria-label=""
+                                    aria-describedby="basic-addon1">
+                                <div class="input-group">
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-pen mr-2"></i>Post</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="navbar-inline" title="My Account">
+                                <img src="avatar2.png" class="rounded-circle" style="height:100px;width:100px"
+                                    alt="Avatar">
+                                <span class="badge badge-pill badge-light">John Doe</span>
+                            </a>
+                            <span class="float-right"> 1 min</span>
+                            <div class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                                architecto ut quis.
+                                Velit perferendis labore dolores perspiciatis impedit nam sint corporis ducimus fuga
+                                possimus dolore, mollitia molestias consectetur amet est?</div>
+                            <div class="input-group mb-3">
+                                <div class="col-6"><img class="img-thumbnail" src="forest.jpg" alt=""></div>
+                                <div class="col-6"><img class="img-thumbnail" src="nature.jpg" alt=""></div>
+
+
+                                <div class="input-group">
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-thumbs-up mr-2"></i>Like</button>
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-comment mr-2" aria-hidden="true"></i>Comment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-deck" id="section2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="navbar-inline" title="My Account">
+                                <img src="avatar5.png" class="rounded-circle" style="height:100px;width:100px"
+                                    alt="Avatar">
+                                <span class="badge badge-pill badge-light">Jane Do</span>
+                            </a>
+                            <span class="float-right"> 16 min</span>
+                            <div class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                                architecto ut quis.
+                                Velit perferendis labore dolores perspiciatis impedit nam sint corporis ducimus fuga
+                                possimus dolore, mollitia molestias consectetur amet est?</div>
+                            <div class="input-group mb-3">
+
+
+
+                                <div class="input-group">
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-thumbs-up mr-2"></i>Like</button>
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-comment mr-2" aria-hidden="true"></i>Comment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-deck" id="section3">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <a href="#" class="navbar-inline" title="My Account">
+                                <img src="avatar6.png" class="rounded-circle" style="height:100px;width:100px"
+                                    alt="Avatar">
+                                <span class="badge badge-pill badge-light">Angie Jane</span>
+                            </a>
+                            <span class="float-right"> 32 min</span>
+                            <div class="mt-2">Have you seen this?</div>
+                            <div class="col-sm-12"><img class="img-fluid" src="nature (1).jpg" alt=""></div>
+                            <div class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                                architecto ut quis.
+                                Velit perferendis labore dolores perspiciatis impedit nam sint corporis ducimus fuga
+                                possimus dolore, mollitia molestias consectetur amet est?</div>
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-thumbs-up mr-2"></i>Like</button>
+                                    <button class="btn btn-outline-light bg-dark mt-2" type="button"><i
+                                            class="fa fa-comment mr-2" aria-hidden="true"></i>Comment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-xs-12">
+
+
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title" style="text-align: center;">Upcoming Events:</p>
+                            <img src="forest.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <p class="card-title" style="text-align: center;">Holiday</p>
+                        <small class="card-title" style="text-align: center;">Friday 15:00</small>
+                        <button type="button" class="btn btn-secondary">Secondary</button>
+                        <br>
+
+                    </div>
+                </div>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title" style="text-align: center;">Friend request</p>
+                            <img src="avatar6.png" class="card-img-top mx-auto" alt="...">
+                        </div>
+                        <p class="card-title" style="text-align: center;">Jane Doe</p>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-success col-6">&#10004;</button>
+                            <button type="button" class="btn btn-danger col-6">&#10006;</button>
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+                <div class="card-deck">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <p class="card-title m:auto" style="text-align: center;">ADS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck">
+                    <div class="card">
+                        
+                        <i class="fas fa-bug col-sm-12 my-3" style="font-size: 10em; text-align: center;"></i>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-md-1"></div>
+
+
+        </div>
+    </div>
+
+
+    <div class="card-footer bg-dark" style="color: #fff;">
+        Footer
+    </div>
+    </div>
+</body>
+
+</html>
